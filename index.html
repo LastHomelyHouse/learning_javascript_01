@@ -1,13 +1,23 @@
 <html>
 	<head>
 		<title>Learning Javascript 01</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+		</script> 
+		<script type="text/javascript">
+			$(function() {
+				$('#saveButton').prop('disabled', true);
+				$('#firstName').on('input', function() {
+					$('#saveButton').prop('disbled', false);
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<h1>Learning Javascript 01</h1>
 		<form method=post action="#">
 			<label for="firstName">first name</label>
 			<input name="firstName" id="firstName" type="text" />
-			<input type="submit" value="save name" />
+			<input type="submit" value="save name" id="saveButton" />
 		</form>
 	</body>
 </html>
