@@ -5,7 +5,13 @@
 		<script type="text/javascript" src="js/jquery-validate.min.js"></script> 
 		<script type="text/javascript">
 			$(function() {
-				$('form').validate();
+				$('form').validate({
+					description: {
+						test: {
+							required: '<div class="error">Required</div>'
+						}
+					}
+				});
 
 				$('#saveButton').prop('disabled', false);
 				$('#firstName').on('input', function() {
