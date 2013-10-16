@@ -2,13 +2,17 @@
 	<head>
 		<title>Learning Javascript 01</title>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script type="text/javascript" src="js/jquery-validate.min.js"></script> 
+		<script type="text/javascript" src="js/jquery.validate.min.js"></script> 
 		<script type="text/javascript">
-			$(function() {
-				$('form').validate({
-					description: {
-						test: {
-							required: '<div class="error">Required</div>'
+			$(document).ready(function($) {
+				$('#myForm').validate({
+					rules: {
+						firstName: {
+							required: true
+						},
+						email: {
+							required: true,
+							email: true
 						}
 					}
 				});
@@ -22,10 +26,18 @@
 	</head>
 	<body>
 		<h1>Learning Javascript 01</h1>
-		<form method=post action="form/result">
-			<label for="firstName">first name</label>
-			<input name="firstName" id="firstName" type="text" data-required="true" />
-			<input type="submit" value="save name" id="saveButton" />
+		<form method="post" id="myForm" action="form/result">
+			<p>
+				<label for="firstName">first name</label><br />
+				<input name="firstName" id="firstName" type="text" />
+			</p>
+			<p>
+				<label for="email">email address</label><br />
+				<input name="email" id="email" type="text" />
+			</p>
+			<p>
+				<input type="submit" value="save name" id="saveButton" />
+			</p>
 		</form>
 	</body>
 </html>
