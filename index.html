@@ -1,8 +1,11 @@
 <html>
 	<head>
 		<title>Learning Javascript 01</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css"></link>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script type="text/javascript" src="js/jquery.validate.min.js"></script> 
+		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function($) {
 				$('#myForm').validate({
@@ -25,19 +28,28 @@
 		</script>
 	</head>
 	<body>
-		<h1>Learning Javascript 01</h1>
-		<form method="post" id="myForm" action="form/result">
-			<p>
-				<label for="firstName">first name</label><br />
-				<input name="firstName" id="firstName" type="text" />
-			</p>
-			<p>
-				<label for="email">email address</label><br />
-				<input name="email" id="email" type="text" />
-			</p>
-			<p>
-				<input type="submit" value="save name" id="saveButton" />
-			</p>
-		</form>
+		<div class="container">
+			<div class="page-header">
+				<h1>Learning Javascript 01</h1>
+			</div>
+			<div class="jumbotron">
+				<h2>Atlanta Falcons: 31 Baltimore Ravens: 10</h2>
+				<p class="lead">QB: sprained ACL: Out for 6 weeks.</p>
+			</div>
+			<form method="post" id="myForm" action="form/result" class="clearfix">
+				<p class="input-group">
+					<label for="firstName" class="input-group-addon">first name</label>
+					<input name="firstName" id="firstName" type="text" class="form-control" />
+				</p>
+				<p class="input-group">
+					<label for="email" class="input-group-addon">email address</label>
+					<input name="email" id="email" type="text" class="form-control" placeholder="user@example.com"/>
+				</p>
+				<input type="submit" value="save name" id="saveButton" class="btn btn-primary pull-right" />
+			</form>
+			<div class="footer">
+				<p>&copy; SGS 2013</p>
+			</div>
+		</div>
 	</body>
 </html>
